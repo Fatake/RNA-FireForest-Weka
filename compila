@@ -1,0 +1,2 @@
+javac -cp ".;weka.jar" entrenador.java
+java --add-opens=java.base/java.lang=ALL-UNNAMED -cp ".;weka.jar" entrenador > resultados.txt
