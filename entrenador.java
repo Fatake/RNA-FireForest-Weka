@@ -62,11 +62,12 @@ public class Entrenador{
             int min = 3, max = 27;
             for (int i = min; i <= max; i++) {
                 String buffer = "";
-                String neuronasCapas = ""+i+","+i;
+                //+","+i
+                String neuronasCapas = ""+i;
                 int epocas = 200;
                 Float learningRate = new Float(0.3);
                 Float momentum = new Float(0.2);
-                int kfolds = 5;//Nume ro de validaciones Cruzadas
+                int kfolds = 5;//Numero de Validaciones Cruzadas
                 
                 buffer += "Neuronas y Capas:"+neuronasCapas+" Epocas:"+epocas+" LR:"+learningRate+" M:"+momentum+" KF:"+kfolds+" ";
                 buffer += entrenar(neuronasCapas, epocas, learningRate, momentum, kfolds);
