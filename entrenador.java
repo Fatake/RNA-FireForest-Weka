@@ -44,7 +44,7 @@ public class Entrenador{
             //System.out.println(eval.toSummaryString("\nResultados\n======\n", false));
             trainreader.close();
             testreader.close();
-            resultados += ""+eval.toSummaryString("Resultados"+(i+1)+"\n<------------------------->\n", false)+"\n\n";
+            resultados += ""+eval.toSummaryString("Resultados\n<------------------------->\n", false)+"\n\n";
         } catch(Exception ex){
             ex.printStackTrace();
         }
@@ -60,9 +60,10 @@ public class Entrenador{
             fichero = new FileWriter("resultados.txt",true);
             PrintWriter pw  = new PrintWriter(fichero);
 
-            String buffer = "";
+            
             int min = 1, max = 10;
             for (int i = min; i < max; i++) {
+                String buffer = "";
                 String neuronasCapas = ""+i+","+i;
                 int epocas = 200;
                 Float learningRate = new Float(0.3);
@@ -70,10 +71,12 @@ public class Entrenador{
                 int kfolds = 5;//Nume ro de validaciones Cruzadas
                 
                 buffer += "Neuronas y Capas:"+neuronasCapas+" Epocas:"+epocas+" LR:"+learningRate+" M:"+momentum+" KF:"+kfolds+" ";
-                buffer = entrenar(neuronasCapas, epocas, learningRate, momentum, kfolds);
+                buffer += entrenar(neuronasCapas, epocas, learningRate, momentum, kfolds);
+            
+                //Imprime buffer
+                pw.println( buffer );
             }
-            //Imprime buffer
-            pw.println( buffer );
+            
 
             //Fin de escritura en archivo
             pw.close();
