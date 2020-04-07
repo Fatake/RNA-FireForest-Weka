@@ -60,7 +60,7 @@ public class Entrenador{
             PrintWriter pw  = new PrintWriter(fichero);
             
             int min = 1, max = 10;
-            for (int i = min; i < max; i++) {
+            for (int i = min; i <= max; i++) {
                 String buffer = "";
                 String neuronasCapas = ""+i+","+i;
                 int epocas = 200;
