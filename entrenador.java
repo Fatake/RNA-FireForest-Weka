@@ -59,7 +59,7 @@ public class Entrenador{
             fichero = new FileWriter("resultados.txt",true);
             PrintWriter pw  = new PrintWriter(fichero);
             
-            int min = 1, max = 10;
+            int min = 3, max = 27;
             for (int i = min; i <= max; i++) {
                 String buffer = "";
                 String neuronasCapas = ""+i+","+i;
