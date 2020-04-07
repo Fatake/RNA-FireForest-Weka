@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.Random;
 import weka.core.*;
-import weka.core.Instances;
-import weka.classifiers.Evaluation;
 import weka.classifiers.*;
 import weka.classifiers.functions.MultilayerPerceptron;
 
