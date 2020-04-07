@@ -41,6 +41,7 @@ public class Entrenador{
             eval.crossValidateModel(mlp, train, kfolds, new Random(1));
 
             System.out.println(eval.errorRate()); //Error cuadrático Medio
+            resultados += "\nErrorCuadrático: "+eval.errorRate();
             //System.out.println(eval.toSummaryString("\nResultados\n======\n", false));
             trainreader.close();
             testreader.close();
@@ -59,7 +60,6 @@ public class Entrenador{
         try{
             fichero = new FileWriter("resultados.txt",true);
             PrintWriter pw  = new PrintWriter(fichero);
-
             
             int min = 1, max = 10;
             for (int i = min; i < max; i++) {
@@ -77,7 +77,6 @@ public class Entrenador{
                 pw.println( buffer );
             }
             
-
             //Fin de escritura en archivo
             pw.close();
         } catch (Exception e) {
